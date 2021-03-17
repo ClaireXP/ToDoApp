@@ -15,9 +15,30 @@
         <h1>To-Do App</h1>
         <h3>A Software Saturdays Final Project</h3>
         <h3>Spring 2021 - VueJS</h3>
+        <hr>
+
         <div id="app">
-            <!-- TODO fill out the HTML here... -->
+            <h2>Current To-Do List</h2>
+
+            <div class="item_list">
+                <task 
+                    title="Task 1" 
+                    description="This is your first task."
+                ></task>
+                <flex_break></flex_break>
+                <task 
+                    title="Task 2" 
+                    description="This is your second task."
+                ></task>
+            </div>
+            <hr>
+
+            <add_task></add_task>
+            <finish_text></finish_text>
+
+            <img class="flower_decal" src="https://gardenbeast-9fcd.kxcdn.com/wp-content/uploads/2020/07/buy-succulents-top-1.png" alt="Awkward. This was supposed to be a nice plant...">
         </div>
+
         <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
         <script src="todo.js" ></script>
