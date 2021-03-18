@@ -1,26 +1,56 @@
 {
-  "fall2019" : {
-    "final" : "Chat Service",
-    "location" : "ARMS B061",
-    "program" : "Android Apps",
-    "school" : "Purdue"
+  "Avatar D&D One-Shot" : {
+    "description" : "Print custom character sheets and complete flexible maps. Ideate more possible paths.",
+    "done" : false,
+    "edit_mode" : false,
+    "title" : "Avatar D&D One-Shot"
   },
-  "fall2020" : {
-    "final" : "Pokedex App",
-    "location" : "WebEx",
-    "program" : "ReactJS",
-    "school" : "Purdue"
+  "CCO Peer Consultant Interview" : {
+    "description" : "Practice for interview on Wednesday.",
+    "done" : false,
+    "edit_mode" : false,
+    "title" : "CCO Peer Consultant Interview"
   },
-  "spring2020" : {
-    "final" : "YouTube Clone",
-    "location" : "WALC 1087",
-    "program" : "ReactJS",
-    "school" : "Purdue"
+  "CS 159" : {
+    "description" : "Comment this week's lab assignment.",
+    "done" : true,
+    "edit_mode" : false,
+    "title" : "CS 159"
   },
-  "spring2021" : {
-    "final" : "To-Do App",
-    "location" : "Zoom",
-    "program" : "VueJS",
-    "school" : "Purdue"
+  "EPCS 121" : {
+    "description" : "Send out weekly announcements and reminders email by Tuesday, continue fullstack development and web scraping of Khan Academy.",
+    "done" : true,
+    "edit_mode" : false,
+    "title" : "EPCS 121"
+  },
+  "MA 265" : {
+    "description" : "Complete 3 written and online HWs by Thursday.",
+    "done" : false,
+    "edit_mode" : false,
+    "title" : "MA 265"
+  },
+  "NUCL 200" : {
+    "description" : "Finish HW #5 by Wednesday.",
+    "done" : false,
+    "edit_mode" : false,
+    "title" : "NUCL 200"
+  },
+  "PHYS 272" : {
+    "description" : "Do lec HWs by Wednesday and Friday, lab by Thursday, and rec meeting on Wednesday.",
+    "done" : false,
+    "edit_mode" : false,
+    "title" : "PHYS 272"
+  },
+  "SCLA 101" : {
+    "description" : "Write Al-Ghazali 5-page-analysis essay by next Monday.",
+    "done" : false,
+    "edit_mode" : false,
+    "title" : "SCLA 101"
+  },
+  "Software Saturdays" : {
+    "description" : "Code to-do app.",
+    "done" : false,
+    "edit_mode" : false,
+    "title" : "Software Saturdays"
   }
 }

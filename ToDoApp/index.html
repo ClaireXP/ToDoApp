@@ -12,31 +12,43 @@
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-        <h1>To-Do App</h1>
-        <h3>A Software Saturdays Final Project</h3>
-        <h3>Spring 2021 - VueJS</h3>
-        <hr>
-
         <div id="app">
-            <h2>Current To-Do List</h2>
-
-            <div class="item_list">
-                <task 
-                    title="Task 1" 
-                    description="This is your first task."
-                ></task>
-                <flex_break></flex_break>
-                <task 
-                    title="Task 2" 
-                    description="This is your second task."
-                ></task>
+            <div class="preface">
+                <h1>To-Do App</h1>
+                <h3>A Software Saturdays Final Project</h3>
+                <h3>Spring 2021 - VueJS</h3>
+                <hr>
             </div>
+
+            <h2 class="list_header">Current To-Do List</h2>
+            <div class="task_list">
+                <task_list v-for="item in task_data_list" :key="item.name"
+                    v-bind:name="item.name" 
+                    v-bind:title="item.title"
+                    v-bind:data="item.data" 
+                    v-bind:edit_mode="item.edit_mode"
+                    v-bind:done="item.done">
+                </task_list>
+            </div>
+
             <hr>
-
             <add_task></add_task>
-            <finish_text></finish_text>
+            <hr>
+            
+            <finished_text></finished_text>
 
-            <img class="flower_decal" src="https://gardenbeast-9fcd.kxcdn.com/wp-content/uploads/2020/07/buy-succulents-top-1.png" alt="Awkward. This was supposed to be a nice plant...">
+            <div class="finished_task_list">
+                <finished_task_list v-for="item in finished_task_data_list" :key="item.name"
+                    v-bind:name="item.name" 
+                    v-bind:title="item.title" 
+                    v-bind:data="item.data" 
+                    v-bind:done="item.done">
+                </finished_task_list>
+            </div>
+
+            <settings v-bind:theme="theme" class="settings"></settings>
+
+            <theme_decals v-bind:theme="theme"></theme_decals>
         </div>
 
         <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
