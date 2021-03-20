@@ -53,7 +53,7 @@ textarea {
     -webkit-align-items: center;
     vertical-align: top;
 
-    background-color: #cad9df;
+    background-color: #dedede;
     border: #507c7c;
     border-style: dotted;
     border-width: 3px;
@@ -244,25 +244,145 @@ textarea {
 
     background: transparent;
     border-width: 0px;
+
+    z-index: 1;
 }
 
 .settings_pic {
     width: inherit;
     height: inherit;
+
+    z-index: 2;
 }
 
-#flower_decal {
+.dropdown_menu {
+    position: inherit;
+    display: inline-flex;
+    flex-direction: column;
+
+    right: -5px;
+    top: -5px;
+
+    min-width: 210px;
+    width: fit-content;
+
+    min-height: 400px;
+    height: fit-content;
+
+    background: #cad9dfa3;
+    border-color: #007399;
+    border-width: 2px;
+    border-style: dotted;
+
+    padding: 10px;
+    z-index: 0;
+}
+
+.settings_text {
+    width: 100%;
+    height: fit-content;
+
+    margin: -1px;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.theme_text {
+    width: 100%;
+    height: fit-content;
+
+    margin-left: 5px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+
+    text-align: left;
+}
+
+.theme_line {
+    width: 100%;
+    height: .5px;
+
+    margin-top: 0px;
+    margin-bottom: 5px;
+
+    border-width: 0px;
+    background-color: #828282;
+}
+
+.theme_icons {
+    display: inherit;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.toggle_flowers {
+    background-color: #f2f2f2;
+}
+
+.toggle_technology {
+    background-color: #C0C0C0;
+}
+
+.toggle_purdue {
+    background-color: #9D968D;
+}
+
+#icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    margin-inline: 5px;
+}
+
+#icon_image {
+    width: inherit;
+    height: inherit;
+}
+
+#decal {
     position: fixed;
     z-index: -1;
 }
 
-.bottom_flower_decal {
+.bottom_technology_decal {
+    bottom: -100px;
+    width: 80%;
+    left: 10%;
+}
+
+.purdue_decal {
+    bottom: 25px;
+    width: 80%;
+    left: 10%;
+}
+
+.bottom_decal {
     bottom: 0px;
     width: 80%;
     left: 10%;
 }
 
-.left_flower_decal {
+.left_technology_decal {
+    left: -120px;
+    top: 30px;
+
+    width: 375px;
+    height: 300px;
+}
+
+.boiler_decal {
+    left: -120px;
+    top: 70px;
+
+    width: 375px;
+    height: 300px;
+}
+
+.left_decal {
     left: -120px;
     top: 450px;
 
@@ -270,7 +390,15 @@ textarea {
     height: 300px;
 }
 
-.right_flower_decal {
+.pete_decal {
+    right: -180px;
+    bottom: 280px;
+
+    width: 425px;
+    height: 450px;
+}
+
+.right_decal {
     right: -200px;
     top: 110px;
 
