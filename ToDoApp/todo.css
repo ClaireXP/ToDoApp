@@ -53,8 +53,8 @@ textarea {
     -webkit-align-items: center;
     vertical-align: top;
 
-    background-color: #dedede;
-    border: #507c7c;
+    background-color: #dededed0;
+    border: #507c7cd0;
     border-style: dotted;
     border-width: 3px;
     padding-top: 2px;
@@ -124,8 +124,8 @@ textarea {
 .add_task {
     flex-direction: row;
 
-    background-color: #cad9df;
-    border: #507c7c;
+    background-color: #cad9dfd0;
+    border: #507c7cd0;
     border-style: dotted;
     border-width: 3px;
     padding-top: 5px;
@@ -266,7 +266,7 @@ textarea {
     min-width: 210px;
     width: fit-content;
 
-    min-height: 400px;
+    min-height: 300px;
     height: fit-content;
 
     background: #cad9dfa3;

@@ -26,14 +26,10 @@ Vue.component('task', {
             </div>
 
             <div class="edit_inputs" v-if="edit_mode">
-                <input id="edit_title_txt" class="edit_title" type="text" 
-                    v-model="title_input"
-                    placeholder="Please enter a title for the task."
-                    @update_input_text="update_title">
-                <textarea id="edit_description_txt" style="resize: none;" class="edit_description" 
-                    v-model="description_input"
-                    placeholder="Please enter a description of the task."
-                    @update_input_text="update_description">
+                <input id="edit_title_txt" class="edit_title" type="text" v-model="title_input"
+                    placeholder="Please enter a title for the task.">
+                <textarea id="edit_description_txt" style="resize: none;" class="edit_description" v-model="description_input"
+                    placeholder="Please enter a description of the task.">
                 </textarea>
             </div>
 
@@ -46,8 +42,8 @@ Vue.component('task', {
     `,
     data: function() {
         return {
-            title_input: '',
-            description_input: ''
+            title_input: this.name,
+            description_input: this.description
         }
     },
     methods: {
@@ -57,7 +53,6 @@ Vue.component('task', {
                 database.ref(`/${this.name}`).update({description: this.description_input});
                 database.ref(`/${this.name}`).update({edit_mode: false});
             }else{
-                this.$emit('update_input_text');
                 database.ref(`/${this.name}`).update({edit_mode: true});
             }this.$root.update_lists();
         },
@@ -68,6 +63,7 @@ Vue.component('task', {
                 this.$root.update_lists();
             }
         },
+
         toggle_done: function(event) {
             if(this.done){
                 database.ref(`/${this.name}`).update({done: false});
@@ -75,16 +71,6 @@ Vue.component('task', {
                 database.ref(`/${this.name}`).update({edit_mode: false});
                 database.ref(`/${this.name}`).update({done: true});
             }this.$root.update_lists();
-        },
-        update_title: function(event) {
-            console.log("title update")
-            elem = event.currentTarget.id;
-            elem.value = this.title;
-        },
-        update_description: function(event) {
-            console.log("description update")
-            elem = event.currentTarget.id;
-            elem.value = this.description;
         }
     }
 });
@@ -130,10 +116,8 @@ Vue.component('finished_task', {
 
         toggle_done: function(event) {
             if(this.done){
-                this.done = false;
                 database.ref(`/${this.name}`).update({done: false});
             }else{
-                this.done = true;
                 database.ref(`/${this.name}`).update({done: true});
             }this.$root.update_lists();
         }
@@ -235,7 +219,7 @@ Vue.component('theme_decals', {
         <div v-else>
             <img id="decal" class="purdue_decal" src="https://se-infra-imageserver2.azureedge.net/clink/images/36b063d1-6c66-44cd-9269-3133d424157dac4e863d-e439-4db2-93ba-2ec6f609e380.png" alt=""></img>
             <img id="decal" class="boiler_decal" src="http://static1.squarespace.com/static/5717ee8e1bbee08525c09f91/t/5a1dfa05e4966b1342847e8e/1516630756250/Purdue-Boilermakers.gif?format=1500w" alt=""></img>
-            <img id="decal" class="pete_decal" src="https://lh3.googleusercontent.com/proxy/96ZhnAT5Td_uETt58sHqsLe8iSTNpavVX4677E9y3H7iNt0vyxY6su6fazSspzs2yEJFabWvCepeUDJb0Vol8XkWjkZ-_dId57Vp" alt=""></img>
+            <img id="decal" class="pete_decal" src="https://lh3.googleusercontent.com/proxy/Ui8XtqQDqVX8O-KogUgBBmJXK85hr-vc6QPf9_qbMY29y6SkfvNuRe94tG_wWOoyrU_RJ9w4ocIV4SGNiFz_1QBeVBDEoH0o11Ip" alt=""></img>
         </div>
     `
 });
@@ -326,9 +310,11 @@ Vue.component('settings_and_addons', {
 // The Vue instance
 const app = new Vue({
     el: '#app',
-    data: {
+    data: function(){
+        return {
             task_data_list: [],
             finished_task_data_list: [],
+        }
     },
     methods: {
         update_lists: function() {
