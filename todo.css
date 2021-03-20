@@ -94,11 +94,15 @@ textarea {
     flex-direction: column;
     margin-inline: 20px;
     width: 330px;
+
+    opacity: d0;
 }
 
 .edit_title {
     background-color: #f2f2f2;
     border-width: 0px;
+    
+    opacity: d0;
 
     height: 20px;
     width: inherit;
@@ -144,7 +148,7 @@ textarea {
 }
 
 .add_title {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2d0;
     border-width: 0px;
 
     width: 485px;
@@ -153,7 +157,7 @@ textarea {
 
 .add_description {
     margin-top: 5px;
-    background-color: #f2f2f2;
+    background-color: #f2f2f2d0;
     border-width: 0px;
 
     width: 485px;

@@ -1,4 +1,3 @@
-// Load the database first
 const firebaseConfig = {
     apiKey: "AIzaSyDaiKFhjVvEnY1w4ZOiWf1uft_rqxuzoYA",
     authDomain: "todoapp-cpoukey.firebaseapp.com",
@@ -10,7 +9,6 @@ const firebaseConfig = {
     measurementId: "G-LVNQKB2RD8"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 let database = firebase.database();
 
@@ -226,11 +224,6 @@ Vue.component('theme_decals', {
 
 Vue.component('settings', {
     props: ['theme'],
-    data: function() {
-        return {
-            menu_visible: false
-        }
-    },
     template: `
         <div>
             <button class="settings_button" v-on:click.exact="toggle_settings">
@@ -258,6 +251,11 @@ Vue.component('settings', {
             </div>
         </div>
     `,
+    data: function() {
+        return {
+            menu_visible: false
+        }
+    },
     methods: {
         toggle_settings: function(event) {
             this.menu_visible = !this.menu_visible;
