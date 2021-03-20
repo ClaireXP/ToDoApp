@@ -315,23 +315,40 @@ const app = new Vue({
         }
     },
     methods: {
-        update_lists: function() {
+        update_lists: function(refresh=false) {
             this.task_data_list = [];
             this.finished_task_data_list = [];
 
-            database.ref('/').once('value').then((snap) => {
-                for(let key in snap.val()) {
-                    if(!snap.val()[key]['done'])
-                    {
-                        this.task_data_list.push({name:key, data:snap.val()[key]});
-                    }else{
-                        this.finished_task_data_list.push({name:key, data:snap.val()[key]});
+            if(refresh){
+                database.ref('/').once('value').then((snap) => {
+                    refreshed = true;
+                    for(let key in snap.val()) {                    
+                        if(snap.val()[key].edit_mode) {
+                            database.ref(`/${key}`).update({edit_mode: false});
+                            refreshed = false;
+                        }
                     }
-                }
-            });
+                    if(refreshed) {
+                        this.update_lists();
+                    }else{
+                        this.update_lists(true)
+                    }
+                });
+            }else{
+                database.ref('/').once('value').then((snap) => {
+                    for(let key in snap.val()) {
+                        if(!snap.val()[key]['done'])
+                        {
+                            this.task_data_list.push({name:key, data:snap.val()[key]});
+                        }else{
+                            this.finished_task_data_list.push({name:key, data:snap.val()[key]});
+                        }
+                    }
+                });
+            }
         },
     },
     created: function() {
-        this.update_lists();
+        this.update_lists(true);
     },
 });
